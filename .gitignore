@@ -58,3 +58,8 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+AmazeZero/Library
+MonoMazeOne/MonoMazeOne/bin
+MonoMazeOne/MonoMazeOne.Desktop/bin
+MonoMazeOne/NorthGame.Core/bin
+MonoMazeOne/NorthGame.Tiled/bin

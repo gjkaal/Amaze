@@ -1,0 +1,9 @@
+C:\_github\Amaze\MonoMazeOne\MonoMazeOne\bin\Debug\netstandard2.0\MonoMazeOne.deps.json
+C:\_github\Amaze\MonoMazeOne\MonoMazeOne\bin\Debug\netstandard2.0\MonoMazeOne.dll
+C:\_github\Amaze\MonoMazeOne\MonoMazeOne\bin\Debug\netstandard2.0\MonoMazeOne.pdb
+C:\_github\Amaze\MonoMazeOne\MonoMazeOne\obj\Debug\netstandard2.0\MonoMazeOne.csprojAssemblyReference.cache
+C:\_github\Amaze\MonoMazeOne\MonoMazeOne\obj\Debug\netstandard2.0\MonoMazeOne.AssemblyInfoInputs.cache
+C:\_github\Amaze\MonoMazeOne\MonoMazeOne\obj\Debug\netstandard2.0\MonoMazeOne.AssemblyInfo.cs
+C:\_github\Amaze\MonoMazeOne\MonoMazeOne\obj\Debug\netstandard2.0\MonoMazeOne.csproj.CoreCompileInputs.cache
+C:\_github\Amaze\MonoMazeOne\MonoMazeOne\obj\Debug\netstandard2.0\MonoMazeOne.dll
+C:\_github\Amaze\MonoMazeOne\MonoMazeOne\obj\Debug\netstandard2.0\MonoMazeOne.pdb

@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "dcgjvlUkKXgpRZRuZTqO8a2Q6sAQ/knEzBmkQmNN+IG5gqJ++5Sjiy0k4Skgr/eIHMOVPiCYDxgNmvBwP0pFPA==",
+  "success": true,
+  "projectFilePath": "C:\\_github\\Amaze\\MonoMazeOne\\MonoMazeOne\\MonoMazeOne.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\gjkaa\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\gjkaa\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.0.1641\\monogame.framework.desktopgl.3.8.0.1641.nupkg.sha512",
+    "C:\\Users\\gjkaa\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

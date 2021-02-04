@@ -1,0 +1,9 @@
+C:\_github\Amaze\MonoMazeOne\NorthGame.Core\obj\Debug\netstandard2.0\NorthGame.Core.csprojAssemblyReference.cache
+C:\_github\Amaze\MonoMazeOne\NorthGame.Core\obj\Debug\netstandard2.0\NorthGame.Core.AssemblyInfoInputs.cache
+C:\_github\Amaze\MonoMazeOne\NorthGame.Core\obj\Debug\netstandard2.0\NorthGame.Core.AssemblyInfo.cs
+C:\_github\Amaze\MonoMazeOne\NorthGame.Core\obj\Debug\netstandard2.0\NorthGame.Core.csproj.CoreCompileInputs.cache
+C:\_github\Amaze\MonoMazeOne\NorthGame.Core\bin\Debug\netstandard2.0\NorthGame.Core.deps.json
+C:\_github\Amaze\MonoMazeOne\NorthGame.Core\bin\Debug\netstandard2.0\NorthGame.Core.dll
+C:\_github\Amaze\MonoMazeOne\NorthGame.Core\bin\Debug\netstandard2.0\NorthGame.Core.pdb
+C:\_github\Amaze\MonoMazeOne\NorthGame.Core\obj\Debug\netstandard2.0\NorthGame.Core.dll
+C:\_github\Amaze\MonoMazeOne\NorthGame.Core\obj\Debug\netstandard2.0\NorthGame.Core.pdb

@@ -1,0 +1,12 @@
+C:\_github\Amaze\MonoMazeOne\NorthGame.Tiled\obj\Debug\netstandard2.0\NorthGame.Tiled.csprojAssemblyReference.cache
+C:\_github\Amaze\MonoMazeOne\NorthGame.Tiled\obj\Debug\netstandard2.0\NorthGame.Tiled.AssemblyInfoInputs.cache
+C:\_github\Amaze\MonoMazeOne\NorthGame.Tiled\obj\Debug\netstandard2.0\NorthGame.Tiled.AssemblyInfo.cs
+C:\_github\Amaze\MonoMazeOne\NorthGame.Tiled\obj\Debug\netstandard2.0\NorthGame.Tiled.csproj.CoreCompileInputs.cache
+C:\_github\Amaze\MonoMazeOne\NorthGame.Tiled\bin\Debug\netstandard2.0\NorthGame.Tiled.deps.json
+C:\_github\Amaze\MonoMazeOne\NorthGame.Tiled\bin\Debug\netstandard2.0\NorthGame.Tiled.dll
+C:\_github\Amaze\MonoMazeOne\NorthGame.Tiled\bin\Debug\netstandard2.0\NorthGame.Tiled.pdb
+C:\_github\Amaze\MonoMazeOne\NorthGame.Tiled\bin\Debug\netstandard2.0\NorthGame.Core.dll
+C:\_github\Amaze\MonoMazeOne\NorthGame.Tiled\bin\Debug\netstandard2.0\NorthGame.Core.pdb
+C:\_github\Amaze\MonoMazeOne\NorthGame.Tiled\obj\Debug\netstandard2.0\NorthGame.Tiled.csproj.CopyComplete
+C:\_github\Amaze\MonoMazeOne\NorthGame.Tiled\obj\Debug\netstandard2.0\NorthGame.Tiled.dll
+C:\_github\Amaze\MonoMazeOne\NorthGame.Tiled\obj\Debug\netstandard2.0\NorthGame.Tiled.pdb
