@@ -365,6 +365,11 @@
       "MonoMazeOne/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "NorthGame.Core": "1.0.0",
+          "NorthGame.Core.Abstractions": "1.0.0",
+          "NorthGame.Tiled": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/MonoMazeOne.dll": {}
         },

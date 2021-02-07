@@ -1,6 +1,11 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using NorthGame.Core;
+using NorthGame.Core.Abstractions;
+using NorthGame.Core.ContainerService;
+using System;
 
 namespace MonoMazeOne
 {
@@ -14,19 +19,63 @@ namespace MonoMazeOne
         public const int ScreenWidth = 320;
         public const int ScreenHeigth = 240;
 
-        private GraphicsDeviceManager _graphics;
+        public const string RootNamespace = "MonoMazeOne";
+        public const string RootNamespaceDot = RootNamespace + ".";
+        public const string ScreensNamespace = RootNamespaceDot + "Screens";
+
+        private readonly GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
+        private readonly IScreenManager _screen;
 
         public GameOne()
         {
-            _graphics = new GraphicsDeviceManager(this);
-            Content.RootDirectory = "Content";
+            SetupContainer();
+            _screen = NorthGameContainer.Instance.Resolve<IScreenManager>();
+            _graphics = NorthGameContainer.Instance.Resolve<GraphicsDeviceManager>();
             IsMouseVisible = true;
+
+            IsMouseVisible = true;
+
+            _screen.ScreenResolver = ((screen) => {
+                var screenType = Type.GetType($"{ ScreensNamespace}.{screen}");
+
+                if (screenType == null) throw new NotImplementedException($"Screen type not found : {ScreensNamespace}.{screen}");
+                if (!typeof(IGameScreen).IsAssignableFrom(screenType)) throw new NotImplementedException($"Type is not valid as game screen");
+
+                return screenType;
+
+            });
+        }
+
+        private void SetupContainer()
+        {
+            Content.RootDirectory = Constants.DesignRoot;
+            NorthGameContainer.Instance.SetUp((c) =>
+            {
+                // Game runtime items
+                c.Register(() => new ContentManager(Content.ServiceProvider, Constants.DesignRoot), SimpleInjector.Lifestyle.Singleton);
+                c.Register(() => new GraphicsDeviceManager(this), SimpleInjector.Lifestyle.Singleton);
+
+                // GameElementFactory registration here 
+                // gives the possibility to modify default behavior.
+                c.Register<IGameElementFactory, GameElementFactory>(SimpleInjector.Lifestyle.Singleton);
+                // Game design elements
+                c.Register<Screens.GameScreen>();
+            }, () =>
+            {
+                return new NorthGameConfiguration
+                {
+                    ScreenWidth = 320.0f,
+                    ScreenHeight = 240.0f
+                };
+            });
         }
 
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
+            _graphics.PreferredBackBufferWidth = (int)_screen.Dimensions.X;
+            _graphics.PreferredBackBufferHeight = (int)_screen.Dimensions.Y;
+            _graphics.ApplyChanges();
 
             base.Initialize();
         }
@@ -35,26 +84,44 @@ namespace MonoMazeOne
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            // TODO: use this.Content to load your game content here
+            _screen.Graphics = GraphicsDevice;
+            _screen.Sprites = _spriteBatch;
+            _screen.CurrentScreen = NorthGameContainer.Instance.Resolve<Screens.GameScreen>();
+            _screen.LoadContent();
         }
 
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
+            { 
+                SaveAndExit(); 
+            }
 
-            // TODO: Add your update logic here
-
+            _screen.Update(gameTime);
             base.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
-            // TODO: Add your drawing code here
-
+            _spriteBatch.Begin();
+            _screen.Draw(_spriteBatch);
+            _spriteBatch.End();
             base.Draw(gameTime);
+        }
+
+
+
+        protected override void UnloadContent()
+        {
+            _screen.UnloadContent();
+            base.UnloadContent();
+        }
+
+        private void SaveAndExit()
+        {
+            UnloadContent();
+            Exit();
         }
     }
 }

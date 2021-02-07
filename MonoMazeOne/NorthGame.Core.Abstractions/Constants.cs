@@ -12,5 +12,6 @@
 
         public const string Screen = "Screen";
         public const string Menu = "Menu";
+        public const string DesignRoot = "Content";
     }
 }

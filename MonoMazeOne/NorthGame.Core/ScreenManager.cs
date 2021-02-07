@@ -28,9 +28,11 @@ namespace NorthGame.Core
         public string Layout { get; set; } // = "Design\\ScreenManager";
         public Type ScreenType { get; private set; }
         public SpriteBatch Sprites { get; set; }
-        public ScreenManager()
+        public ScreenManager(INorthGameConfiguration config)
         {
+            Dimensions = new Vector2(config.ScreenWidth, config.ScreenHeight);            
         }
+
 
         public Func<string, Type> ScreenResolver { private get; set; }
 

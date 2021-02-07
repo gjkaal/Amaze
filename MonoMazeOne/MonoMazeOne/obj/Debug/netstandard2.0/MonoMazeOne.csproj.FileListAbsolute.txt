@@ -7,3 +7,12 @@ C:\_github\Amaze\MonoMazeOne\MonoMazeOne\obj\Debug\netstandard2.0\MonoMazeOne.As
 C:\_github\Amaze\MonoMazeOne\MonoMazeOne\obj\Debug\netstandard2.0\MonoMazeOne.csproj.CoreCompileInputs.cache
 C:\_github\Amaze\MonoMazeOne\MonoMazeOne\obj\Debug\netstandard2.0\MonoMazeOne.dll
 C:\_github\Amaze\MonoMazeOne\MonoMazeOne\obj\Debug\netstandard2.0\MonoMazeOne.pdb
+C:\_github\Amaze\MonoMazeOne\MonoMazeOne\bin\Debug\netstandard2.0\NorthGame.Core.Abstractions.dll
+C:\_github\Amaze\MonoMazeOne\MonoMazeOne\bin\Debug\netstandard2.0\NorthGame.Core.dll
+C:\_github\Amaze\MonoMazeOne\MonoMazeOne\bin\Debug\netstandard2.0\NorthGame.Tiled.dll
+C:\_github\Amaze\MonoMazeOne\MonoMazeOne\bin\Debug\netstandard2.0\NorthGame.Core.Abstractions.pdb
+C:\_github\Amaze\MonoMazeOne\MonoMazeOne\bin\Debug\netstandard2.0\NorthGame.Core.pdb
+C:\_github\Amaze\MonoMazeOne\MonoMazeOne\bin\Debug\netstandard2.0\NorthGame.Tiled.pdb
+C:\_github\Amaze\MonoMazeOne\MonoMazeOne\obj\Debug\netstandard2.0\MonoMazeOne.csproj.CopyComplete
+C:\_github\Amaze\MonoMazeOne\MonoMazeOne\bin\Debug\netstandard2.0\Design\Viewscreen.json
+C:\_github\Amaze\MonoMazeOne\MonoMazeOne\bin\Debug\netstandard2.0\MazeLevels\Zero.json

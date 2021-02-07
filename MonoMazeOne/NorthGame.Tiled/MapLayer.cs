@@ -135,7 +135,7 @@ namespace NorthGame.Tiled
 
             _tileSet = tileSet;
 
-            var shortName = Path.GetFileNameWithoutExtension(tileSet.Name);
+            var shortName = Path.GetFileNameWithoutExtension(tileSet.Source);
             TileSheet = tileFactory.CreateSprite($"TileSets/{shortName}");
             TileSheet.LoadContent();
 
@@ -218,9 +218,10 @@ namespace NorthGame.Tiled
                     }
                     tile.TileState = state;
                 }
-                // Correction for image offset
+
+                // Correction for image offset               
                 spriteSheetIndex -= 1;
-                var sx = (spriteSheetIndex % _tileSet.Columns) * _tileSet.TileWidth;
+                var  sx = (spriteSheetIndex % _tileSet.Columns) * _tileSet.TileWidth;                
                 var sy = (spriteSheetIndex / _tileSet.Columns) * _tileSet.TileHeight;
 
                 tile.Active = true;

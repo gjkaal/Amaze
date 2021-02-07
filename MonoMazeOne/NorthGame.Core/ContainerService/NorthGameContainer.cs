@@ -13,7 +13,7 @@ namespace NorthGame.Core.ContainerService
 
     public class NorthGameContainer : INorthGameContainer
     {
-        public static INorthGameContainer Instance => _instance;
+        public static NorthGameContainer Instance => _instance;
 
         private readonly Container _container = new Container();
         private readonly static NorthGameContainer _instance = new NorthGameContainer();
@@ -32,9 +32,10 @@ namespace NorthGame.Core.ContainerService
             return (IGameScreen)_container.GetInstance(screenType);
         }
 
-        public void SetUp(Action<Container> setupContainer)
+        public void SetUp(Action<Container> setupContainer, Func< INorthGameConfiguration> configuration)
         {
             // TODO : Add functional logger
+            _container.Register( configuration, Lifestyle.Singleton);
             _container.Register<ILogger>(() => NullLogger.Instance, Lifestyle.Singleton);
 
             _container.Register<IInputManager, InputManager>(Lifestyle.Singleton);

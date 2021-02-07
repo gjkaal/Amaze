@@ -1,0 +1,4 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/_github/Amaze/MonoMazeOne/MonoMazeOne.Desktop/Content/Fonts/Verdana.spritefont","C:/_github/Amaze/MonoMazeOne/MonoMazeOne.Desktop/Content/bin/DesktopGL/Fonts/Verdana.xnb","FontDescriptionProcessor","SpriteFontContent",2010,21538,0,240667
+"C:/_github/Amaze/MonoMazeOne/MonoMazeOne.Desktop/Content/Images/TilemapZero-128x128.png","C:/_github/Amaze/MonoMazeOne/MonoMazeOne.Desktop/Content/bin/DesktopGL/Images/TilemapZero-128x128.xnb","TextureProcessor","Texture2DContent",3397,65621,0,0193318
+"C:/_github/Amaze/MonoMazeOne/MonoMazeOne.Desktop/Content/TileSets/TilemapZero-128x128.png","C:/_github/Amaze/MonoMazeOne/MonoMazeOne.Desktop/Content/bin/DesktopGL/TileSets/TilemapZero-128x128.xnb","TextureProcessor","Texture2DContent",3397,65621,0,0128513

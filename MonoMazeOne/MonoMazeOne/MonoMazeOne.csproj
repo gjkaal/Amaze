@@ -3,11 +3,25 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Design\Viewscreen.json" />
+    <None Remove="MazeLevels\Zero.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Design\Viewscreen.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MazeLevels\Zero.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.0.1641">
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="MazeLevels\" />
+    <ProjectReference Include="..\NorthGame.Core.Abstractions\NorthGame.Core.Abstractions.csproj" />
+    <ProjectReference Include="..\NorthGame.Core\NorthGame.Core.csproj" />
+    <ProjectReference Include="..\NorthGame.Tiled\NorthGame.Tiled.csproj" />
   </ItemGroup>
 </Project>

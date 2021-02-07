@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/_github/Amaze/MonoMazeOne/MonoMazeOne/Content/Images/TilemapZero-128x128.png</SourceFile>
+  <SourceFile>C:/_github/Amaze/MonoMazeOne/MonoMazeOne.Desktop/Content/TileSets/TilemapZero-128x128.png</SourceFile>
   <SourceTime>2021-02-02T22:34:53.9557765+01:00</SourceTime>
-  <DestFile>C:/_github/Amaze/MonoMazeOne/MonoMazeOne/Content/bin/DesktopGL/Images/TilemapZero-128x128.xnb</DestFile>
-  <DestTime>2021-02-04T21:09:34.6814885+01:00</DestTime>
+  <DestFile>C:/_github/Amaze/MonoMazeOne/MonoMazeOne.Desktop/Content/bin/DesktopGL/Content/TileSets/TilemapZero-128x128.xnb</DestFile>
+  <DestTime>2021-02-07T13:22:50.7284641+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T16:17:54+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

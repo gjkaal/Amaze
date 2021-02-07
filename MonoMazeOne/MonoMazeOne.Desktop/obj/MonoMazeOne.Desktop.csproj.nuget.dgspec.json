@@ -113,7 +113,17 @@
         "frameworks": {
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\_github\\Amaze\\MonoMazeOne\\NorthGame.Core.Abstractions\\NorthGame.Core.Abstractions.csproj": {
+                "projectPath": "C:\\_github\\Amaze\\MonoMazeOne\\NorthGame.Core.Abstractions\\NorthGame.Core.Abstractions.csproj"
+              },
+              "C:\\_github\\Amaze\\MonoMazeOne\\NorthGame.Core\\NorthGame.Core.csproj": {
+                "projectPath": "C:\\_github\\Amaze\\MonoMazeOne\\NorthGame.Core\\NorthGame.Core.csproj"
+              },
+              "C:\\_github\\Amaze\\MonoMazeOne\\NorthGame.Tiled\\NorthGame.Tiled.csproj": {
+                "projectPath": "C:\\_github\\Amaze\\MonoMazeOne\\NorthGame.Tiled\\NorthGame.Tiled.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

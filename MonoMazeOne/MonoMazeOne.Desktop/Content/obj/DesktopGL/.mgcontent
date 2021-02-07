@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Profile>Reach</Profile>
+  <Platform>DesktopGL</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/_github/Amaze/MonoMazeOne/MonoMazeOne.Desktop/Content/Fonts/Verdana.spritefont</File>
+    <File>C:/_github/Amaze/MonoMazeOne/MonoMazeOne.Desktop/Content/Images/TilemapZero-128x128.png</File>
+    <File>C:/_github/Amaze/MonoMazeOne/MonoMazeOne.Desktop/Content/TileSets/TilemapZero-128x128.png</File>
+  </SourceFiles>
+  <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+  </DestFiles>
+</SourceFileCollection>

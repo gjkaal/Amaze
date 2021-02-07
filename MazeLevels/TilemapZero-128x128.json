@@ -1,4 +1,12 @@
 { "columns":8,
+ "editorsettings":
+    {
+     "export":
+        {
+         "format":"",
+         "target":"."
+        }
+    },
  "image":"..\/Resources\/TilemapZero-128x128.png",
  "imageheight":128,
  "imagewidth":128,

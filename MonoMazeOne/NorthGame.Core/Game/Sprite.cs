@@ -43,7 +43,7 @@ namespace NorthGame.Core.Game
         /// <summary>
         /// Fot to use for the text
         /// </summary>
-        public string FontName { get; set; } = "Fonts/Verdana42";
+        public string FontName { get; set; } = "Fonts/Verdana";
 
         /// <summary>
         /// Texture for the background.

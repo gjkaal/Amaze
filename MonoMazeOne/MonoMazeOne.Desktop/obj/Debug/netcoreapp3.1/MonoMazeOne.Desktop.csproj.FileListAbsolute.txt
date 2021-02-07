@@ -46,3 +46,8 @@ C:\_github\Amaze\MonoMazeOne\MonoMazeOne.Desktop\bin\Debug\netcoreapp3.1\Microso
 C:\_github\Amaze\MonoMazeOne\MonoMazeOne.Desktop\bin\Debug\netcoreapp3.1\SimpleInjector.dll
 C:\_github\Amaze\MonoMazeOne\MonoMazeOne.Desktop\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
 C:\_github\Amaze\MonoMazeOne\MonoMazeOne.Desktop\bin\Debug\netcoreapp3.1\System.Text.Json.dll
+C:\_github\Amaze\MonoMazeOne\MonoMazeOne.Desktop\bin\Debug\netcoreapp3.1\Content\Fonts\Verdana.xnb
+C:\_github\Amaze\MonoMazeOne\MonoMazeOne.Desktop\bin\Debug\netcoreapp3.1\Content\Images\TilemapZero-128x128.xnb
+C:\_github\Amaze\MonoMazeOne\MonoMazeOne.Desktop\bin\Debug\netcoreapp3.1\Design\Viewscreen.json
+C:\_github\Amaze\MonoMazeOne\MonoMazeOne.Desktop\bin\Debug\netcoreapp3.1\MazeLevels\Zero.json
+C:\_github\Amaze\MonoMazeOne\MonoMazeOne.Desktop\bin\Debug\netcoreapp3.1\Content\TileSets\TilemapZero-128x128.xnb
