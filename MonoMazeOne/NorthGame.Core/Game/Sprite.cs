@@ -92,7 +92,7 @@ namespace NorthGame.Core.Game
                 _origin,
                 viewScale,
                 SpriteEffects.None, 0.0f);
-        }
+        }      
 
         public void LoadContent()
         {
@@ -168,5 +168,7 @@ namespace NorthGame.Core.Game
         {
             ActiveEffectByName(effect, (e) => e.LoadContent(this));
         }
+
+
     }
 }

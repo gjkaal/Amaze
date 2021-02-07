@@ -29,7 +29,7 @@ namespace MonoMazeOne
 
         public GameOne()
         {
-            SetupContainer();
+            SetupContainer(false);
             _screen = NorthGameContainer.Instance.Resolve<IScreenManager>();
             _graphics = NorthGameContainer.Instance.Resolve<GraphicsDeviceManager>();
             IsMouseVisible = true;
@@ -47,14 +47,20 @@ namespace MonoMazeOne
             });
         }
 
-        private void SetupContainer()
+        private void SetupContainer(bool fullScreen)
         {
             Content.RootDirectory = Constants.DesignRoot;
             NorthGameContainer.Instance.SetUp((c) =>
             {
+                var graphics = new GraphicsDeviceManager(this);
+                if (fullScreen)
+                {
+                    graphics.IsFullScreen = true;
+                    graphics.ApplyChanges();
+                }
                 // Game runtime items
                 c.Register(() => new ContentManager(Content.ServiceProvider, Constants.DesignRoot), SimpleInjector.Lifestyle.Singleton);
-                c.Register(() => new GraphicsDeviceManager(this), SimpleInjector.Lifestyle.Singleton);
+                c.Register(() => graphics, SimpleInjector.Lifestyle.Singleton);
 
                 // GameElementFactory registration here 
                 // gives the possibility to modify default behavior.

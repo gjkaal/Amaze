@@ -71,6 +71,12 @@ namespace NorthGame.Tiled
         {
             Layers.Visit((m) => m.Draw(spriteBatch));
         }
+        //spriteBatch, 0, 0, 3, 3, 9, 9);
+
+        public void Draw(SpriteBatch spriteBatch, Vector2 offset, Vector2 screenoffset, Vector2 viewSize)
+        {
+            Layers.Visit((m) => m.Draw(spriteBatch, offset, screenoffset, viewSize));
+        }
 
         public void Draw(SpriteBatch spriteBatch, LayerType zPLane)
         {

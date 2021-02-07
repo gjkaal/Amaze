@@ -16,5 +16,6 @@ namespace NorthGame.Core.Abstractions
         void Update(GameTime gameTime);
 
         void Draw(SpriteBatch spriteBatch);
+
     }
 }

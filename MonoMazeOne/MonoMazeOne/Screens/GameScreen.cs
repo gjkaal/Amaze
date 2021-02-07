@@ -3,9 +3,6 @@ using Microsoft.Xna.Framework.Graphics;
 using NorthGame.Core.Abstractions;
 using NorthGame.Core.Game;
 using NorthGame.Tiled;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace MonoMazeOne.Screens
 {
@@ -13,7 +10,10 @@ namespace MonoMazeOne.Screens
     {
         private readonly IGameElementFactory _factory;
         public string ViewLayout { get; set; } = "Design\\Viewscreen";
+        public string MazeLayout { get; set; } = "MazeLevels\\Zero";
+
         private readonly TiledMap _view = new TiledMap();
+        private readonly TiledMap _maze = new TiledMap();
         public GameScreen(IGameElementFactory factory)
         {
             _factory = factory;
@@ -23,6 +23,7 @@ namespace MonoMazeOne.Screens
         {
             base.LoadContent();
             _view.LoadContent(ViewLayout, _factory);
+            _maze.LoadContent(MazeLayout, _factory);
         }
 
         public override void UnloadContent()
@@ -34,7 +35,7 @@ namespace MonoMazeOne.Screens
         public override void Draw(SpriteBatch spriteBatch)
         {
             base.Draw(spriteBatch);
-
+            _maze.Draw(spriteBatch, new Vector2 (0, 0), new Vector2(32, 32), new Vector2(176, 176));
             _view.Draw(spriteBatch);
         }
 
@@ -43,7 +44,12 @@ namespace MonoMazeOne.Screens
             base.Update(gameTime);
             // map updates after player updates
             // to handle map changes due to movement.
+            _maze.Update(gameTime);
             _view.Update(gameTime);
+
+            Status = $"{loopCount++}";
         }
+
+        private int loopCount = 0;
     }
 }

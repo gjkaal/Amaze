@@ -107,6 +107,36 @@ namespace NorthGame.Tiled
             return false;
         }
 
+        public void Draw(SpriteBatch spriteBatch, Vector2 offset, Vector2 screenoffset, Vector2 viewSize)
+        {
+            var maxX = offset.X + viewSize.X;
+            var maxY = offset.Y + viewSize.Y;
+
+            Tiles
+                .Where(m => m.Active)
+                .Visit(m =>
+                {
+                    if (TileSheet.Position.X < offset.X || TileSheet.Position.Y < offset.Y)
+                    {
+                        // hidden
+                    }
+                    else
+                    {
+                        // draw at an offset
+                        TileSheet.Position = m.Position + screenoffset;
+                        if (TileSheet.Position.X > maxX || TileSheet.Position.Y > maxY)
+                        {
+                            // hidden
+                        }
+                        else
+                        {
+                            TileSheet.SourceRect = m.SourceRect;
+                            TileSheet.Draw(spriteBatch);
+                        }
+                    }
+                });
+        }
+
         public void Draw(SpriteBatch spriteBatch)
         {
             Tiles
