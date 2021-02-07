@@ -10,3 +10,5 @@ C:\_github\Amaze\MonoMazeOne\NorthGame.Tiled\bin\Debug\netstandard2.0\NorthGame.
 C:\_github\Amaze\MonoMazeOne\NorthGame.Tiled\obj\Debug\netstandard2.0\NorthGame.Tiled.csproj.CopyComplete
 C:\_github\Amaze\MonoMazeOne\NorthGame.Tiled\obj\Debug\netstandard2.0\NorthGame.Tiled.dll
 C:\_github\Amaze\MonoMazeOne\NorthGame.Tiled\obj\Debug\netstandard2.0\NorthGame.Tiled.pdb
+C:\_github\Amaze\MonoMazeOne\NorthGame.Tiled\bin\Debug\netstandard2.0\NorthGame.Core.Abstractions.dll
+C:\_github\Amaze\MonoMazeOne\NorthGame.Tiled\bin\Debug\netstandard2.0\NorthGame.Core.Abstractions.pdb

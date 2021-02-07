@@ -1,14 +1,13 @@
 ﻿// Rapbit Game development
 //
 using Microsoft.Xna.Framework.Graphics;
-using NorthGame.Core.Model;
 using System.Collections.Generic;
 using System.Linq;
-using NorthGame.Core;
+using NorthGame.Core.Extensions;
 using Microsoft.Xna.Framework;
 using System;
 using System.IO;
-using NorthGame.Core.Extensions;
+using NorthGame.Core.Abstractions;
 
 namespace NorthGame.Tiled
 {
@@ -89,7 +88,7 @@ namespace NorthGame.Tiled
 
                     // check minkowski collision
                     var playerVector = player.PlayerPosition() + player.Velocity;
-                    var colliderSize = Core.Math.NorthGametMath.Minkowski(
+                    var colliderSize = Core.Math.NorthMath.Minkowski(
                         column * TileDimension.X,
                         row * TileDimension.Y,
                         _tileOffset,

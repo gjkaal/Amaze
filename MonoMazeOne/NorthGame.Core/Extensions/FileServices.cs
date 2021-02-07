@@ -1,7 +1,7 @@
 ﻿// Rapbit Game development
 //
 using Newtonsoft.Json;
-using NorthGame.Core.Model;
+using NorthGame.Core.Abstractions;
 using System;
 
 namespace NorthGame.Core.Extensions

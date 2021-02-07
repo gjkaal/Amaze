@@ -1,0 +1,9 @@
+C:\_github\Amaze\MonoMazeOne\NorthGame.Core.Abstractions\obj\Debug\netstandard2.0\NorthGame.Core.Abstractions.csprojAssemblyReference.cache
+C:\_github\Amaze\MonoMazeOne\NorthGame.Core.Abstractions\obj\Debug\netstandard2.0\NorthGame.Core.Abstractions.AssemblyInfoInputs.cache
+C:\_github\Amaze\MonoMazeOne\NorthGame.Core.Abstractions\obj\Debug\netstandard2.0\NorthGame.Core.Abstractions.AssemblyInfo.cs
+C:\_github\Amaze\MonoMazeOne\NorthGame.Core.Abstractions\obj\Debug\netstandard2.0\NorthGame.Core.Abstractions.csproj.CoreCompileInputs.cache
+C:\_github\Amaze\MonoMazeOne\NorthGame.Core.Abstractions\bin\Debug\netstandard2.0\NorthGame.Core.Abstractions.deps.json
+C:\_github\Amaze\MonoMazeOne\NorthGame.Core.Abstractions\bin\Debug\netstandard2.0\NorthGame.Core.Abstractions.dll
+C:\_github\Amaze\MonoMazeOne\NorthGame.Core.Abstractions\bin\Debug\netstandard2.0\NorthGame.Core.Abstractions.pdb
+C:\_github\Amaze\MonoMazeOne\NorthGame.Core.Abstractions\obj\Debug\netstandard2.0\NorthGame.Core.Abstractions.dll
+C:\_github\Amaze\MonoMazeOne\NorthGame.Core.Abstractions\obj\Debug\netstandard2.0\NorthGame.Core.Abstractions.pdb

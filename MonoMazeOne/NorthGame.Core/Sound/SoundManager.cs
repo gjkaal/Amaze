@@ -5,30 +5,12 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Media;
 using NorthGame.Core.Extensions;
-using NorthGame.Core.Model;
+using NorthGame.Core.Abstractions;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace NorthGame.Sound
+namespace NorthGame.Core.Sound
 {
-    public interface ISoundManager : IGameElement
-    {
-        void PlaySfx(Sfx sfx);
-
-        void PlaySong(string name, float volume);
-
-        void LoadContent(ContentManager contentManager, string layout);
-    }
-
-    /// <summary>
-    /// Sound Effect enum
-    /// </summary>
-    public enum Sfx
-    {
-        None = 0,
-        Gun = 1,
-        Bang = 2
-    }
 
     public sealed class SoundManager : ISoundManager
     {

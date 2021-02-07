@@ -1,6 +1,6 @@
 ﻿// NorthGame Game development
 //
-using NorthGame.Core.Model;
+using NorthGame.Core.Abstractions;
 
 namespace NorthGame.Tiled
 {

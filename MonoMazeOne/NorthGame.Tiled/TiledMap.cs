@@ -2,9 +2,8 @@
 //
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using NorthGame.Core;
+using NorthGame.Core.Abstractions;
 using NorthGame.Core.Extensions;
-using NorthGame.Core.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
