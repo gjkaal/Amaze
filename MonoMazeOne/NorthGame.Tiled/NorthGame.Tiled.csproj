@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.0.1641">
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="newtonsoft.json" Version="12.0.3" />
+    <PackageReference Include="system.io.abstractions" Version="13.2.9" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NorthGame.Core.Abstractions\NorthGame.Core.Abstractions.csproj" />
+    <ProjectReference Include="..\NorthGame.Core\NorthGame.Core.csproj" />
+  </ItemGroup>
+</Project>
