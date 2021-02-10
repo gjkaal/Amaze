@@ -22,8 +22,8 @@ namespace MonoMazeOne.Screens
         public override void LoadContent()
         {
             base.LoadContent();
-            _view.LoadContent(ViewLayout, _factory);
-            _maze.LoadContent(MazeLayout, _factory);
+            _view.LoadContent(ViewLayout, _factory, false);
+            _maze.LoadContent(MazeLayout, _factory, true);
         }
 
         public override void UnloadContent()

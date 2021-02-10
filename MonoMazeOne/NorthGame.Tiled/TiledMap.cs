@@ -44,12 +44,12 @@ namespace NorthGame.Tiled
         private Point _tileDimensions;
 
 
-        public void LoadContent(string layout, IGameElementFactory tileFactory)
+        public void LoadContent(string layout, IGameElementFactory tileFactory, bool colisionMap)
         {
             Layout = layout;
             this.Populate(Layout);
             _tileDimensions = new Point(TileWidth, TileHeight);
-            Layers.Visit((m) => m.LoadContent(TileDimensions, tileFactory, TileSets.First()));
+            Layers.Visit((m) => m.LoadContent(TileDimensions, tileFactory, TileSets.First(), colisionMap));
         }
 
         public void LoadContent()
@@ -83,12 +83,6 @@ namespace NorthGame.Tiled
             var layer = Layers.FirstOrDefault(m => m.ZPlane == zPLane);
             layer?.Draw(spriteBatch);
         }
-
-        public bool CheckTileCollision(IPlayer player, out ITile tile, out Rectangle hitBox)
-        {
-            return Layers
-                .Single(m => m.ZPlane == LayerType.Collision)
-                .CheckTileCollision(player, out tile, out hitBox);
-        }
+      
     }
 }

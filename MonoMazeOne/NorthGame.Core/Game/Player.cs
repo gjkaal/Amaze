@@ -124,25 +124,7 @@ namespace NorthGame.Core.Game
             }
 
             // TODO : check if moving within game field
-            if (MapLayer.CheckTileCollision(this, out var tile, out var hitBox))
-            {
-                // check what to do with the collider
-                switch (tile.TileState)
-                {
-                    case TileState.Solid:
-                        // stop movement
-                       
-                        break;
-
-                    default:
-                        Image.Position += Velocity;
-                        break;
-                }
-            }
-            else
-            {
-                Image.Position += Velocity;
-            }
+           
 
             // Trigger effects by calling image update
             Image.Update(gameTime);

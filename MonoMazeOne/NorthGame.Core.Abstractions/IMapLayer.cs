@@ -6,8 +6,6 @@ namespace NorthGame.Core.Abstractions
     {
         LayerType ZPlane { get; }
 
-        bool CheckTileCollision(IPlayer player, out ITile tile, out Rectangle hitBox);
-
-        void LoadContent(Point tileSize, IGameElementFactory tileFactory, ITileSet tileSet);
+        void LoadContent(Point tileSize, IGameElementFactory tileFactory, ITileSet tileSet, bool colisionMap);
     }
 }

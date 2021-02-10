@@ -62,55 +62,12 @@ namespace NorthGame.Tiled
 
         public LayerType ZPlane { get; private set; }
 
-        public bool CheckTileCollision(IPlayer player, out ITile tile, out Rectangle hitBox)
-        {
-            // get tiles near position of the player.
-            tile = null;
-            hitBox = Rectangle.Empty;
-            Vector2 playerVelocity = player.Velocity;
-            var playerRef = player.GridReference();
-
-            if (playerVelocity.Equals(Vector2.Zero)) return false;
-
-
-            for (var k = -player.TileSpan.Y; k <= player.TileSpan.Y; k++)
-            {
-                var row = playerRef.Y + k;
-                // skip rows outside of tile map.
-                if (row < 0 || row >= _layerSize.Y) continue;
-                for (var l = -player.TileSpan.X; l <= player.TileSpan.X; l++)
-                {
-                    var column = playerRef.X + l;
-                    if (column < 0 || column >= _layerSize.X) continue;
-                    // find the tile
-                    var matchTile = Tiles[row * _layerSize.X + column];
-                    if (!matchTile.Active || matchTile.TileState == TileState.None) continue;
-
-                    // check minkowski collision
-                    var playerVector = player.PlayerPosition() + player.Velocity;
-                    var colliderSize = Core.Math.NorthMath.Minkowski(
-                        column * TileDimension.X,
-                        row * TileDimension.Y,
-                        _tileOffset,
-                        player.HitBox,
-                        _tileHitbox);
-
-                    var checkVector = new Vector2((int)playerVector.X, (int)playerVector.Y);
-                    if (colliderSize.Contains(checkVector))
-                    {
-                        hitBox = _tileHitbox;
-                        tile = matchTile;
-                        return true;
-                    }
-                }
-            }
-            return false;
-        }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 offset, Vector2 screenoffset, Vector2 viewSize)
         {
             var maxX = offset.X + viewSize.X;
             var maxY = offset.Y + viewSize.Y;
+            var cellSize = 16;
 
             Tiles
                 .Where(m => m.Active)
@@ -130,8 +87,12 @@ namespace NorthGame.Tiled
                         }
                         else
                         {
-                            TileSheet.SourceRect = m.SourceRect;
-                            TileSheet.Draw(spriteBatch);
+                            int spriteIndex = (int)m.TileState-1;
+                            if (spriteIndex > 0)
+                            {
+                                TileSheet.SourceRect = new Rectangle((spriteIndex % 8) * cellSize, (spriteIndex / 8) * cellSize, 16, 16);
+                                TileSheet.Draw(spriteBatch);
+                            }
                         }
                     }
                 });
@@ -154,7 +115,7 @@ namespace NorthGame.Tiled
             throw new NotSupportedException();
         }
 
-        public void LoadContent(Point tileSize, IGameElementFactory tileFactory, ITileSet tileSet)
+        public void LoadContent(Point tileSize, IGameElementFactory tileFactory, ITileSet tileSet, bool colisionMap)
         {
             TileDimension = tileSize;
             _layerSize = new Point(Width, Height);
@@ -169,7 +130,7 @@ namespace NorthGame.Tiled
             TileSheet = tileFactory.CreateSprite($"TileSets/{shortName}");
             TileSheet.LoadContent();
 
-            LoadMap(tileFactory);
+            LoadMap(tileFactory, colisionMap);
         }
 
         public void UnloadContent()
@@ -178,11 +139,39 @@ namespace NorthGame.Tiled
             TileSheet.UnloadContent();
         }
 
+        const int speed = 250;
+        TimeSpan speedTimer; 
         public void Update(GameTime gameTime)
         {
+            // handle tile changes
+            speedTimer += gameTime.ElapsedGameTime;
+            if (speedTimer.TotalMilliseconds > speed)
+            {
+                UpdateTileChanges();
+                speedTimer = 0;
+            }
         }
 
-        private void LoadMap(IGameElementFactory tileFactory)
+        private void UpdateTileChanges()
+        {
+            // traverse from bottom to top, to prevent falling objects from falling throw in one run.
+            ListExtensions.VisitMatrixReverseY(_layerSize, (column, row) => { 
+                var tile = Tiles[row * _layerSize.X + column];
+                if (tile.TileState==TileState.Rock)
+                {
+                    // rocks fall and roll of each other
+                    var tileBelow = Tiles[(row+1) * _layerSize.X + column];
+                    if (tileBelow.TileState == TileState.None)
+                    {
+                        // fall down
+                        tileBelow.TileState = TileState.Rock;
+                        tile.TileState = TileState.None;
+                    }
+                }
+            });
+        }
+
+        private void LoadMap(IGameElementFactory tileFactory, bool collisionMap)
         {
             // Interpret zplane
             if ( Enum.TryParse(Name, out LayerType z))
@@ -192,8 +181,6 @@ namespace NorthGame.Tiled
 
             if (Type == "tilelayer")
             {
-                // check layer type
-                var collisionLayer = Name.Equals("COLLISION", StringComparison.OrdinalIgnoreCase);
                 // Read tiles
                 Tiles.Clear();
                 var k = 0;
@@ -201,7 +188,7 @@ namespace NorthGame.Tiled
                 foreach (var s in Data)
                 {
                     var tile = tileFactory.CreateTile();
-                    ParseTileInformation(ref tile, new Point(l, k), s, collisionLayer);
+                    ParseTileInformation(ref tile, new Point(l, k), s, collisionMap, 8);
                     Tiles.Add(tile);
                     l++;
                     if (l >= Width)
@@ -217,7 +204,12 @@ namespace NorthGame.Tiled
             }
         }
 
-        private ITile ParseTileInformation(ref ITile tile, Point mapPosition, int spriteSheetIndex, bool collisionMap)
+        private ITile ParseTileInformation(
+            ref ITile tile, 
+            Point mapPosition, 
+            int spriteSheetIndex, 
+            bool collisionMap,
+            int tilesetColumns)
         {
             var x = mapPosition.X;
             var y = mapPosition.Y;
@@ -244,15 +236,15 @@ namespace NorthGame.Tiled
                     }
                     else
                     {
-                        state = TileState.Solid;
+                        state = TileState.None;
                     }
                     tile.TileState = state;
                 }
 
                 // Correction for image offset               
                 spriteSheetIndex -= 1;
-                var  sx = (spriteSheetIndex % _tileSet.Columns) * _tileSet.TileWidth;                
-                var sy = (spriteSheetIndex / _tileSet.Columns) * _tileSet.TileHeight;
+                var  sx = (spriteSheetIndex % tilesetColumns) * TileDimension.X;                
+                var sy = (spriteSheetIndex / tilesetColumns) * TileDimension.Y;
 
                 tile.Active = true;
 
