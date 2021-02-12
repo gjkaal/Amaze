@@ -40,6 +40,7 @@ namespace NorthGame.Core.ContainerService
 
             _container.Register<IInputManager, InputManager>(Lifestyle.Singleton);
             _container.Register<IScreenManager, ScreenManager>(Lifestyle.Singleton);
+            _container.Register<IScoreManager, ScoreManager>(SimpleInjector.Lifestyle.Singleton);
             // 
             _container.Register<IMenuManager, MenuManager>();
             _container.Register<ISoundManager, SoundManager>();

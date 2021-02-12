@@ -62,7 +62,7 @@ namespace NorthGame.Core.Game
         public Point GridReference()
         {
             var playerPosition = PlayerPosition();
-            return new Point((int)(playerPosition.X / TileDimension.X), (int)(playerPosition.Y / TileDimension.Y));
+            return new Point((int)playerPosition.X * TileDimension.X, (int)playerPosition.Y * TileDimension.Y);
         }
 
         public void LoadContent(string layout)

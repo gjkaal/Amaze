@@ -51,3 +51,4 @@ C:\_github\Amaze\MonoMazeOne\MonoMazeOne.Desktop\bin\Debug\netcoreapp3.1\Content
 C:\_github\Amaze\MonoMazeOne\MonoMazeOne.Desktop\bin\Debug\netcoreapp3.1\Design\Viewscreen.json
 C:\_github\Amaze\MonoMazeOne\MonoMazeOne.Desktop\bin\Debug\netcoreapp3.1\MazeLevels\Zero.json
 C:\_github\Amaze\MonoMazeOne\MonoMazeOne.Desktop\bin\Debug\netcoreapp3.1\Content\TileSets\TilemapZero-128x128.xnb
+C:\_github\Amaze\MonoMazeOne\MonoMazeOne.Desktop\bin\Debug\netcoreapp3.1\Design\Player\Player1.json

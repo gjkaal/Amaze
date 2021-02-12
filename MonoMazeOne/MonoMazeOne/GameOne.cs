@@ -25,15 +25,16 @@ namespace MonoMazeOne
 
         private readonly GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
+        private readonly IGameElementFactory _factory;
         private readonly IScreenManager _screen;
 
         public GameOne()
         {
             SetupContainer(false);
+            _factory = NorthGameContainer.Instance.Resolve<IGameElementFactory>();
             _screen = NorthGameContainer.Instance.Resolve<IScreenManager>();
             _graphics = NorthGameContainer.Instance.Resolve<GraphicsDeviceManager>();
-            IsMouseVisible = true;
-
+            
             IsMouseVisible = true;
 
             _screen.ScreenResolver = ((screen) => {
@@ -65,6 +66,7 @@ namespace MonoMazeOne
                 // GameElementFactory registration here 
                 // gives the possibility to modify default behavior.
                 c.Register<IGameElementFactory, GameElementFactory>(SimpleInjector.Lifestyle.Singleton);
+                
                 // Game design elements
                 c.Register<Screens.GameScreen>();
             }, () =>

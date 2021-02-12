@@ -15,17 +15,14 @@ namespace NorthGame.Core.Extensions
 
         public static void VisitMatrix(this Point size, Action<int, int> action)
         {
-            for (int x = 0; x < size.X; x++)
-                for (int y = 0; y < size.Y; y++)
+            // other set should be wall and is never active
+            // this also prevents any reference calculation 
+            // to trip.
+            for (int x = 1; x < size.X-1; x++)
+                for (int y = 1; y < size.Y-1; y++)
                     action.Invoke(x, y);
         }
 
-        public static void VisitMatrixReverseY(this Point size, Action<int, int> action)
-        {
-            for (int x = 0; x < size.X; x++)
-                for (int y = size.Y-1; y >=0; y--)
-                    action.Invoke(x, y);
-        }
     }
 
 

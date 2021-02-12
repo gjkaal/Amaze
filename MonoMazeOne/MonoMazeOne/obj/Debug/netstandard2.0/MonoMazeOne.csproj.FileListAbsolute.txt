@@ -16,3 +16,4 @@ C:\_github\Amaze\MonoMazeOne\MonoMazeOne\bin\Debug\netstandard2.0\NorthGame.Tile
 C:\_github\Amaze\MonoMazeOne\MonoMazeOne\obj\Debug\netstandard2.0\MonoMazeOne.csproj.CopyComplete
 C:\_github\Amaze\MonoMazeOne\MonoMazeOne\bin\Debug\netstandard2.0\Design\Viewscreen.json
 C:\_github\Amaze\MonoMazeOne\MonoMazeOne\bin\Debug\netstandard2.0\MazeLevels\Zero.json
+C:\_github\Amaze\MonoMazeOne\MonoMazeOne\bin\Debug\netstandard2.0\Design\Player\Player1.json

@@ -6,9 +6,8 @@ namespace NorthGame.Core.Abstractions
 {
     public interface ITile : IGameElement
     {
-        TileState TileState { get; set; }
         bool Active { get; set; }
+        TileState TileState { get; set; }
         Vector2 Position { get; set; }
-        Rectangle SourceRect { get; set; }      
     }
 }

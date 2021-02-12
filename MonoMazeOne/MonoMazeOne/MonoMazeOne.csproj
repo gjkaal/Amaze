@@ -3,10 +3,14 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Design\Player\Player1.json" />
     <None Remove="Design\Viewscreen.json" />
     <None Remove="MazeLevels\Zero.json" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Design\Player\Player1.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Design\Viewscreen.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

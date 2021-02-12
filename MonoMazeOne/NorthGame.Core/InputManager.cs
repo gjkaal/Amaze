@@ -6,6 +6,7 @@ using NorthGame.Core.Abstractions;
 
 namespace NorthGame.Core
 {
+
     public sealed class InputManager : IInputManager
     {
         public KeyboardState Keyboard { get; private set; }

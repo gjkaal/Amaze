@@ -11,4 +11,10 @@ namespace NorthGame.Core.Abstractions
 
         void LoadContent(string menuLayout);
     }
+
+    public interface IScoreManager
+    {
+        void AddScore(int playerIndex, int value);
+    }
+
 }

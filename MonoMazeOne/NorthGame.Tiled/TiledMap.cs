@@ -67,15 +67,20 @@ namespace NorthGame.Tiled
             Layers.Visit((m) => m.Update(gameTime));
         }
 
+        public void Update(GameTime gameTime, Direction playerMoveDirection)
+        {
+            Layers.Visit((m) => m.Update(gameTime, playerMoveDirection));
+        }
+
         public void Draw(SpriteBatch spriteBatch)
         {
             Layers.Visit((m) => m.Draw(spriteBatch));
         }
         //spriteBatch, 0, 0, 3, 3, 9, 9);
 
-        public void Draw(SpriteBatch spriteBatch, Vector2 offset, Vector2 screenoffset, Vector2 viewSize)
+        public void Draw(SpriteBatch spriteBatch, Vector2 screenoffset, Vector2 viewSize)
         {
-            Layers.Visit((m) => m.Draw(spriteBatch, offset, screenoffset, viewSize));
+            Layers.Visit((m) => m.Draw(spriteBatch, screenoffset, viewSize));
         }
 
         public void Draw(SpriteBatch spriteBatch, LayerType zPLane)

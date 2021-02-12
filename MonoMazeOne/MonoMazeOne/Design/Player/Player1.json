@@ -1,0 +1,31 @@
+{
+    "Image": {
+        "IsActive": true,
+        "Position": "2, 3",
+        "ResourcePath": "Images/TilemapZero-128x128",
+        "Effects": "SpriteSheetEffect",
+        "SpriteSheetEffect": {
+            "Current": 33,
+            "FrameInactive": 33,
+            "FrameBegin": 0,
+            "FrameEnd": 0,
+            "Frames": {
+                "X": 8,
+                "Y": 8
+            },
+            "SwitchFrame": 200,
+            "FrameSize": {
+                "X": 16,
+                "Y": 16
+            },
+            "IsActive": true
+        }
+    },
+    "MoveSpeed": 100,
+    "HitBox": {
+        "X": -7,
+        "Y": -7,
+        "Width":  16,
+        "Height": 16
+    }
+}
