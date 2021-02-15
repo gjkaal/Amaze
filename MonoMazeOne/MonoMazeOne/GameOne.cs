@@ -30,7 +30,7 @@ namespace MonoMazeOne
 
         public GameOne()
         {
-            SetupContainer(false);
+            SetupContainer(true);
             _factory = NorthGameContainer.Instance.Resolve<IGameElementFactory>();
             _screen = NorthGameContainer.Instance.Resolve<IScreenManager>();
             _graphics = NorthGameContainer.Instance.Resolve<GraphicsDeviceManager>();
