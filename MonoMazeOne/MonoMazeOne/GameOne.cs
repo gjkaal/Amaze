@@ -56,16 +56,16 @@ namespace MonoMazeOne
                 var graphics = new GraphicsDeviceManager(this);
                 if (fullScreen)
                 {
-                    graphics.IsFullScreen = true;
+                    graphics.IsFullScreen = false;
                     graphics.ApplyChanges();
                 }
                 // Game runtime items
                 c.Register(() => new ContentManager(Content.ServiceProvider, Constants.DesignRoot), SimpleInjector.Lifestyle.Singleton);
                 c.Register(() => graphics, SimpleInjector.Lifestyle.Singleton);
-
                 // GameElementFactory registration here 
                 // gives the possibility to modify default behavior.
                 c.Register<IGameElementFactory, GameElementFactory>(SimpleInjector.Lifestyle.Singleton);
+                c.Register<IGameRules, GameRules>();
                 
                 // Game design elements
                 c.Register<Screens.GameScreen>();

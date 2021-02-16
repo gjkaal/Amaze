@@ -23,6 +23,15 @@ namespace NorthGame.Core.Extensions
                     action.Invoke(x, y);
         }
 
+        public static int CountMatrix(this Point size, Func<int, int, bool> action)
+        {
+            int count = 0;
+            for (int x = 1; x < size.X - 1; x++)
+                for (int y = 1; y < size.Y - 1; y++)
+                    count += action.Invoke(x, y) ? 1 : 0;
+            return count;
+        }
+
     }
 
 

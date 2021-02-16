@@ -14,7 +14,10 @@ namespace NorthGame.Core.Abstractions
 
     public interface IScoreManager
     {
+        int Lost { get; set; }
+        int Found { get; set; }
         void AddScore(int playerIndex, int value);
+        void Reset();
     }
 
 }

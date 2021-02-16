@@ -44,12 +44,12 @@ namespace NorthGame.Tiled
         private Point _tileDimensions;
 
 
-        public void LoadContent(string layout, IGameElementFactory tileFactory, bool colisionMap)
+        public void LoadContent(string layout, IGameElementFactory tileFactory)
         {
             Layout = layout;
             this.Populate(Layout);
             _tileDimensions = new Point(TileWidth, TileHeight);
-            Layers.Visit((m) => m.LoadContent(TileDimensions, tileFactory, TileSets.First(), colisionMap));
+            Layers.Visit((m) => m.LoadContent(TileDimensions, tileFactory, TileSets.First()));
         }
 
         public void LoadContent()
@@ -65,11 +65,6 @@ namespace NorthGame.Tiled
         public void Update(GameTime gameTime)
         {
             Layers.Visit((m) => m.Update(gameTime));
-        }
-
-        public void Update(GameTime gameTime, Direction playerMoveDirection)
-        {
-            Layers.Visit((m) => m.Update(gameTime, playerMoveDirection));
         }
 
         public void Draw(SpriteBatch spriteBatch)
