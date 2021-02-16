@@ -1,2 +1,2 @@
 # Amaze
-Unity maze puzzle game
+Monogame maze puzzle game
